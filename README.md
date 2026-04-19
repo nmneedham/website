@@ -1,40 +1,53 @@
-# Nick Needham Site (Static + Contentful)
+# Nick Needham Site (Markdown + Generated Posts)
 
-This bundle includes:
-- Focusrite-inspired layout (IBM Plex Sans)
-- Dark mode toggle
-- Home page + Blog index + Blog post page
-- Contentful CDA fetch for post lists and post-by-slug
-- Rich Text renderer (no extra SDK)
-- RSS generator script (run locally and commit rss.xml)
+This version switches the blog away from Contentful/manual post manifests.
 
-## Configure Contentful
-Edit: `/js/contentful-config.js`
+## How it works
+- Write posts in `/posts/*.md`
+- Run:
 
-Set:
-- SPACE_ID
-- ACCESS_TOKEN (Content Delivery API token)
-
-Assumed Contentful fields for `blogPost`:
-- title
-- slug
-- publishedDate
-- category (optional)
-- excerpt (optional)
-- content (Rich Text)
-
-## RSS Generation
 ```bash
 npm install
-CONTENTFUL_SPACE_ID="..." CONTENTFUL_DELIVERY_TOKEN="..." SITE_URL="https://nmneedham.dev" npm run rss
+npm run build
 ```
 
-## Local testing
-Use a simple static server (ES modules):
+That single build step generates:
+- `blog/posts/*.html`
+- `js/posts-data.js`
+- `rss.xml`
+
+The homepage and `/blog/` index read from the generated `js/posts-data.js`, so new posts automatically show up in the list after a build.
+
+## Writing a post
+
+Create a file like:
+
+```md
+---
+title: "My New Post"
+date: "2026-04-19"
+excerpt: "Quick summary for cards and RSS."
+slug: "my-new-post"
+tags:
+  - hardware
+  - blog
+---
+
+# Heading
+
+Post content here.
+
+![Image alt](/assets/Image/example.jpg)
+```
+
+## Deploy flow
+Before pushing/deploying, run:
+
 ```bash
-python -m http.server 8080
+npm run build
 ```
 
+Then commit the generated files and deploy.
 
-## RSS includes static posts
-The RSS generator merges your `/blog/static/*.html` posts with Contentful posts (if configured).
+## Migrated Contentful-era posts
+Three older posts that had been living in the public Contentful-backed blog were migrated into `/posts` so they stay in the generated blog even after Contentful is removed.

@@ -3,6 +3,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "rss": "node scripts/generate-rss.mjs"
+    "build": "node scripts/build-posts.mjs",
+    "rss": "node scripts/build-posts.mjs"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "marked": "^15.0.7"
   }
 }
