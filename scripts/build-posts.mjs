@@ -128,7 +128,7 @@ async function main() {
     const read = estimateReadTime(parsed.content);
     const html = marked.parse(parsed.content, { async: false });
 
-    const href = `posts/${slug}.html`;
+    const href = `blog/posts/${slug}.html`;
     const post = { slug, title, date, excerpt, tags, read, href, html };
     posts.push(post);
 
