@@ -1,4 +1,4 @@
-name: Deploy site to Namecheap
+name: Build and Deploy site
 
 on:
   push:
@@ -9,8 +9,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out repo
+      - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install deps
+        run: npm install
+
+      - name: Build site
+        run: npm run build
 
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -23,3 +34,4 @@ jobs:
           exclude: |
             **/.git*
             **/.github/**
+            **/node_modules/**
