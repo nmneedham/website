@@ -9,7 +9,7 @@ export const POSTS = [
       "markdown"
     ],
     "read": "1 min read",
-    "href": "posts/example-new-post.html"
+    "href": "blog/posts/example-new-post.html"
   },
   {
     "slug": "test-generated",
@@ -18,7 +18,7 @@ export const POSTS = [
     "excerpt": "Testing generated posts system.",
     "tags": [],
     "read": "1 min read",
-    "href": "posts/test-generated.html"
+    "href": "blog/posts/test-generated.html"
   },
   {
     "slug": "nostalgiac-things-and-other-thoughts",
@@ -30,7 +30,7 @@ export const POSTS = [
       "updates"
     ],
     "read": "1 min read",
-    "href": "posts/nostalgiac-things-and-other-thoughts.html"
+    "href": "blog/posts/nostalgiac-things-and-other-thoughts.html"
   },
   {
     "slug": "some-life-updates",
@@ -42,7 +42,7 @@ export const POSTS = [
       "updates"
     ],
     "read": "1 min read",
-    "href": "posts/some-life-updates.html"
+    "href": "blog/posts/some-life-updates.html"
   },
   {
     "slug": "contentful-blog-test",
@@ -54,7 +54,7 @@ export const POSTS = [
       "web"
     ],
     "read": "1 min read",
-    "href": "posts/contentful-blog-test.html"
+    "href": "blog/posts/contentful-blog-test.html"
   },
   {
     "slug": "gba-sp-reshell",
@@ -67,7 +67,7 @@ export const POSTS = [
       "handheld"
     ],
     "read": "1 min read",
-    "href": "posts/gba-sp-reshell.html"
+    "href": "blog/posts/gba-sp-reshell.html"
   },
   {
     "slug": "upcoming-projects",
@@ -80,7 +80,7 @@ export const POSTS = [
       "modding"
     ],
     "read": "1 min read",
-    "href": "posts/upcoming-projects.html"
+    "href": "blog/posts/upcoming-projects.html"
   },
   {
     "slug": "snes-restoration",
@@ -93,6 +93,6 @@ export const POSTS = [
       "repair"
     ],
     "read": "2 min read",
-    "href": "posts/snes-restoration.html"
+    "href": "blog/posts/snes-restoration.html"
   }
 ];
