@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>First project/blog post </title>
+  <link rel="stylesheet" href="../styles.css">
+  <link href="/assets/Image/favicon.ico" rel="icon" type="image/x-icon">
+</head>
+<body>
+<button id="darkModeToggle" title="Toggle Dark Mode">🌓</button>
+
+<header>
+  <h1>nmneedham.dev</h1>
+  <nav>
+    <a href="/index.html">home</a>
+    <a href="/about/">about</a>
+    <a href="/blog/">blog</a>
+    <a href="/projects/">projects</a>
+    <a href="https://github.com/nmneedham" target="_blank">github</a>
+    <a href="/contact/">contact</a>
+  </nav>
+</header>
+
+<main>
+  <section>
+    <h2>Title </h2>
+    <p><em><!-- date posted --></em></p>
+    <p><!-- content here --></p>
+
+    <h3><!-- h3 title --></h3>
+    <p><!-- h3 paragraph --></p>
+    <p> <!-- paragraph --> </p>
+
+    
+
+
+    <h3><!-- second h3 title--></h3>
+    <p><!-- paragraph 1 --> </p>
+    <p><!-- paragraph 2 --> </p>
+    
+    
+
+    
+    <p><a href="/blog/">← Back to Blog</a></p>
+  </section>
+</main>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.getElementById("darkModeToggle");
+  toggle.addEventListener("click", () => {
+    document.body.classList.toggle("light-mode");
+  });
+});
+</script>
+</body>
+</html>

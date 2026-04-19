@@ -1,0 +1,8 @@
+{
+  "name": "nick-needham-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "rss": "node scripts/generate-rss.mjs"
+  }
+}

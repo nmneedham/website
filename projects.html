@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>~/projects - Terminal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="terminal-container">
+        <div class="terminal-window">
+            <div class="terminal-header">
+                <div class="terminal-buttons">
+                    <span class="terminal-button"></span>
+                    <span class="terminal-button"></span>
+                    <span class="terminal-button"></span>
+                </div>
+                <div class="terminal-title">nick@nmneedham:~/projects</div>
+            </div>
+
+            <div class="terminal-body">
+                <!-- Navigation -->
+                <nav class="nav">
+                    <div class="nav-prompt">
+                        <span class="prompt-symbol">$</span>
+                        <span class="prompt-path">~/nmneedham.dev/projects</span>
+                        <span class="prompt-cursor"></span>
+                    </div>
+                    <ul class="nav-links">
+                        <li><a href="index.html">home</a></li>
+                        <li><a href="projects.html">projects</a></li>
+                        <li><a href="blog-list.html">blog</a></li>
+                        <li><a href="about.html">about</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Page Header -->
+                <div class="page-header">
+                    <h1>Featured Projects</h1>
+                    <p class="page-description">School projects, hardware builds, and personal creations</p>
+                </div>
+
+                <!-- Projects Grid -->
+                <div class="topics-grid">
+                    <a href="https://nmneedham.github.io/Angular-JS-Project/map" class="topic-card">
+                        <div class="topic-icon">
+┌─────────────┐
+│ import java │
+│ Angular.js  │
+│ Interactive │
+│ World Map   │
+└─────────────┘
+                        </div>
+                        <div class="topic-name">Angular/Java Class Project</div>
+                        <p class="topic-description">Interactive map showing country name, capital, region, income level and additional properties. Built with Angular and Java.</p>
+                        <span class="topic-count">Live Demo Available</span>
+                    </a>
+
+                    <a href="https://nmneedham.dev/blog/snesresto.html" class="topic-card">
+                        <div class="topic-icon">
+┌─────────────┐
+│  ▄▄▄▄▄▄▄▄   │
+│  ██SNES ██  │
+│  ██1993 ██  │
+│  ██░░░░░██  │
+└─────────────┘
+                        </div>
+                        <div class="topic-name">SNES Restoration</div>
+                        <p class="topic-description">Restoring a 1993 Super Nintendo found in a backyard shed. Deep cleaning, rust removal, and capacitor replacement.</p>
+                        <span class="topic-count">Hardware</span>
+                    </a>
+
+                    <a href="https://nmneedham.dev/blog/gbaspreshell.html" class="topic-card">
+                        <div class="topic-icon">
+┌─────────────┐
+│  ▄▄▄▄▄▄▄▄   │
+│  ██ GBA ██  │
+│  ██ SP  ██  │
+│  ██░░░░░██  │
+└─────────────┘
+                        </div>
+                        <div class="topic-name">GBA SP Reshell</div>
+                        <p class="topic-description">Shell replacement for Game Boy Advance SP using Aliexpress kit. Clean restoration without teeth marks.</p>
+                        <span class="topic-count">Hardware</span>
+                    </a>
+
+                    <a href="https://nmneedham.dev/blog/upcomingprojects.html" class="topic-card">
+                        <div class="topic-icon">
+┌─────────────┐
+│  ████████   │
+│  ██ N64 ██  │
+│  ████████   │
+│  USB-C GC   │
+└─────────────┘
+                        </div>
+                        <div class="topic-name">Hardware Projects</div>
+                        <p class="topic-description">USB-C cables, Gamecube controller paracord mods, and N64 Steel Sticks. Various gaming hardware modifications and creations.</p>
+                        <span class="topic-count">In Progress</span>
+                    </a>
+
+                    <div class="topic-card" style="cursor: default; opacity: 0.7;">
+                        <div class="topic-icon">
+┌─────────────┐
+│  ████████   │
+│  ██ ?? ███  │
+│  ████████   │
+│  SOON™      │
+└─────────────┘
+                        </div>
+                        <div class="topic-name">More Projects Coming</div>
+                        <p class="topic-description">Additional projects will be added as they're completed. Check back soon!</p>
+                        <span class="topic-count">Coming Soon</span>
+                    </div>
+                </div>
+
+                <!-- Current Work Section -->
+                <section class="section" style="margin-top: 3rem;">
+                    <div class="section-header">
+                        <h2>Currently Working On</h2>
+                    </div>
+                    <div class="content-section">
+                        <p class="content-text">Homemade USB-C cables - documenting the process</p>
+                        <p class="content-text">Paracord mods for Gamecube controllers</p>
+                        <p class="content-text">Steel sticks for N64 controllers - prototypes in development</p>
+                        <p class="content-text">Learning Java through school projects and personal exploration</p>
+                    </div>
+                </section>
+
+                <!-- Footer -->
+                <footer class="terminal-footer">
+                    <div class="footer-grid">
+                        <div class="footer-section">
+                            <h3>Navigate</h3>
+                            <ul class="footer-links">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="blog-list.html">Blog</a></li>
+                                <li><a href="projects.html">Projects</a></li>
+                                <li><a href="about.html">About</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="footer-section">
+                            <h3>Categories</h3>
+                            <ul class="footer-links">
+                                <li><a href="#">Programming</a></li>
+                                <li><a href="#">Electronics</a></li>
+                                <li><a href="#">Gaming</a></li>
+                                <li><a href="#">Hardware</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="footer-section">
+                            <h3>Links</h3>
+                            <ul class="footer-links">
+                                <li><a href="https://github.com/nmneedham">GitHub</a></li>
+                                <li><a href="rss.php">RSS Feed</a></li>
+                                <li><a href="https://nmneedham.dev">Main Site</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="footer-bottom">
+                        <p>© 2025 Nick Needham | nmneedham.dev | [ ls -la /projects ]</p>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

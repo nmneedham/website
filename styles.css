@@ -1,0 +1,236 @@
+*,
+*::before,
+*::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root{
+  --bg:#ffffff; --fg:#111111; --muted:#888888; --border:#e3e3e3;
+  --card-bg:#f6f6f6; --shadow-soft:0 10px 24px rgba(0,0,0,.06);
+}
+
+:root[data-theme="dark"]{
+  --bg:#050509; --fg:#f7f7f7; --muted:#a3a3a3; --border:#22222b;
+  --card-bg:#111119; --shadow-soft:0 10px 24px rgba(0,0,0,.7);
+}
+
+html,body{height:100%}
+body{
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:var(--bg); color:var(--fg);
+  transition:background-color .25s ease,color .25s ease;
+}
+
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:2px solid var(--fg);outline-offset:3px}
+
+.page{display:flex;min-height:100vh}
+
+.sidebar{
+  width:260px; padding:32px 24px; border-right:1px solid var(--border);
+  position:sticky; top:0; height:100vh; background:var(--bg);
+  display:flex; flex-direction:column; justify-content:space-between;
+}
+
+.site-title{
+  font-family:"IBM Plex Sans",system-ui,sans-serif;
+  font-size:22px; font-weight:700; letter-spacing:.12em; text-transform:uppercase;
+}
+.site-title:hover{opacity:.85}
+
+.sidebar-nav{
+  margin-top:20px; display:flex; flex-direction:column; gap:6px;
+  font-family:"IBM Plex Sans",system-ui,sans-serif; font-size:13px;
+  letter-spacing:.15em; text-transform:uppercase;
+}
+.sidebar-nav a{opacity:.7;font-weight:600}
+.sidebar-nav a:hover{opacity:1}
+
+.sidebar-desc{
+  margin-top:18px; font-size:13px; line-height:1.5; max-width:220px; color:var(--muted);
+}
+
+.sidebar-bottom{display:flex;flex-direction:column;gap:16px}
+
+.theme-toggle{
+  font-family:"IBM Plex Sans",system-ui,sans-serif;
+  font-size:11px; text-transform:uppercase; letter-spacing:.16em;
+  padding:8px 14px; border-radius:999px; background:transparent;
+  border:1px solid var(--border); color:var(--fg); cursor:pointer;
+}
+.theme-toggle:hover{background:var(--card-bg)}
+
+.social-links{
+  display:flex; flex-wrap:wrap; gap:8px 10px;
+  font-family:"IBM Plex Sans",system-ui,sans-serif;
+  font-size:11px; text-transform:uppercase; letter-spacing:.14em;
+}
+.social-links a{opacity:.7}
+.social-links a:hover{opacity:1}
+
+.main{flex:1; padding:24px 32px 32px}
+.section{margin-bottom:52px}
+
+.section-header{display:flex;flex-direction:column;gap:4px;margin-bottom:18px}
+.section-header h2{
+  font-family:"IBM Plex Sans",system-ui,sans-serif;
+  font-size:14px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+}
+.section-sub{font-size:12px;color:var(--muted)}
+
+.gallery{column-count:3;column-gap:16px}
+.gallery-item{break-inside:avoid;margin-bottom:16px;border-radius:6px;overflow:hidden}
+.gallery-placeholder .placeholder-box{
+  width:100%; height:260px; background:var(--card-bg);
+  border:1px solid var(--border); border-radius:6px; box-shadow:var(--shadow-soft);
+  transition:background .2s ease,border-color .2s ease;
+}
+.gallery-placeholder:hover .placeholder-box{background:var(--border)}
+.gallery-caption{
+  position:absolute; inset:auto 0 0 0; padding:10px 12px;
+  display:flex; justify-content:space-between; align-items:center;
+  font-family:"IBM Plex Sans",system-ui,sans-serif; font-size:11px;
+  text-transform:uppercase; letter-spacing:.14em; color:#f7f7f7;
+  background:linear-gradient(to top,rgba(0,0,0,.7),rgba(0,0,0,0));
+  opacity:0; transform:translateY(8px); transition:opacity .25s ease,transform .25s ease;
+}
+.gallery-item{position:relative}
+.gallery-item:hover .gallery-caption{opacity:1;transform:translateY(0)}
+
+.post-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.post-card{
+  border-radius:10px; padding:14px 16px 16px;
+  background:var(--card-bg); box-shadow:var(--shadow-soft); border:1px solid var(--border);
+}
+.post-title{
+  font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:15px;line-height:1.35;margin-bottom:6px;
+}
+.post-card a:hover .post-title{text-decoration:underline}
+.post-meta{
+  font-size:11px;text-transform:uppercase;letter-spacing:.14em;
+  font-family:"IBM Plex Sans",system-ui,sans-serif;color:var(--muted);margin-bottom:8px;
+}
+.post-excerpt{font-size:13px;line-height:1.5;color:var(--fg)}
+
+.post-wrapper{max-width:720px;margin:0 auto}
+.post-title-main{font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:24px;line-height:1.25;font-weight:600;margin-bottom:8px}
+.post-kicker{font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.16em;color:var(--muted);margin-bottom:6px}
+.post-meta-line{display:flex;flex-wrap:wrap;gap:6px;font-size:12px;color:var(--muted)}
+.post-body{font-size:14px;line-height:1.7;margin-top:20px}
+.post-body p + p{margin-top:12px}
+.post-body h2,.post-body h3,.post-body h4{font-family:"IBM Plex Sans",system-ui,sans-serif;margin-top:20px;margin-bottom:8px;font-weight:600}
+.post-footer{margin-top:24px;font-size:12px}
+.post-footer a{text-decoration:underline}
+
+/* About + terminal nod */
+.terminal-nod{
+  display:inline-flex; align-items:center; gap:8px;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+  font-size:12px; color:var(--muted);
+  border:1px solid var(--border); background:var(--card-bg);
+  border-radius:8px; padding:8px 10px; width:fit-content; margin-bottom:14px;
+}
+.terminal-nod .prompt{color:var(--fg);opacity:.9}
+
+.about-block{max-width:720px;font-size:14px;line-height:1.65}
+.about-block p + p{margin-top:12px}
+
+.about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-top:20px}
+.about-item{background:var(--card-bg);border-radius:10px;padding:12px 14px;box-shadow:var(--shadow-soft);border:1px solid var(--border)}
+.about-label{display:block;font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.about-value{font-size:14px;font-weight:500}
+
+.interests-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:18px}
+.interest-card{background:var(--card-bg);border-radius:10px;padding:12px 14px;box-shadow:var(--shadow-soft);border:1px solid var(--border)}
+.interest-title{font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.interest-list{margin-left:16px;font-size:13px;line-height:1.6}
+
+.working-list{margin-top:18px;background:var(--card-bg);border-radius:10px;padding:12px 14px;box-shadow:var(--shadow-soft);border:1px solid var(--border)}
+.working-list h3{font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.working-list ul{margin-left:16px;font-size:13px;line-height:1.6}
+
+/* Responsive */
+@media (max-width:960px){
+  .page{flex-direction:column}
+  .sidebar{
+    position:static;height:auto;width:100%;
+    border-right:none;border-bottom:1px solid var(--border);
+    flex-direction:row;justify-content:space-between;gap:20px;
+  }
+  .main{padding:20px 16px 32px}
+  .gallery{column-count:2}
+}
+@media (max-width:640px){
+  .sidebar{flex-direction:column}
+  .gallery{column-count:1}
+}
+
+/* Legacy/static post media helpers */
+.post-body img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+
+.post-body .image-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 12px 0;
+}
+
+.post-body .image-container img {
+  flex: 1 1 280px;
+}
+
+
+/* About + Work side-by-side */
+.about-work-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.about-work-grid .section {
+  margin-bottom: 0;
+}
+
+@media (max-width: 900px) {
+  .about-work-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Two-column section (About + Blog) — wraps cleanly */
+.two-col {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.two-col .col {
+  min-width: 0;
+  flex: 1 1 520px;
+}
+
+.two-col .blog-col {
+  flex: 1 1 420px;
+}
+
+/* Make the home blog list compact inside a column */
+#blog .post-list {
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+#blog .post-card {
+  padding: 12px 14px;
+}
+
+#blog .post-title {
+  font-size: 14px;
+}
+
+#blog .post-excerpt {
+  font-size: 12.5px;
+}

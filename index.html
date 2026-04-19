@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Nick Needham — Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="alternate" type="application/rss+xml" title="Nick Needham RSS" href="rss.xml" />
+</head>
+<body>
+  <div class="page">
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <a href="/" class="site-title">Nick Needham</a>
+
+        <nav class="sidebar-nav" aria-label="Primary navigation">
+          <a href="#work">work</a>
+          <a href="/blog/index.html">blog</a>
+          <a href="#about">about</a>
+          <a href="rss.xml">rss feed</a>
+        </nav>
+
+        <!-- <p class="sidebar-desc">Hello, I'm Nick, a student in software development and electronics enthusiast. I enjoy programming and learning new things about electronics. I'm currently learning the Java programming language in school, so this is a blog to follow me on my journey and other projects.</p> -->
+      </div>
+
+      <div class="sidebar-bottom">
+        <button id="themeToggle" class="theme-toggle" type="button">dark mode</button>
+        <div class="social-links">
+          <a href="https://github.com/nmneedham" target="_blank" rel="noreferrer">github</a>
+          <a href="blog/">blog</a>
+          <a href="mailto:you@example.com">email</a>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      
+
+      
+
+      
+    <section id="about-work" class="section about-work-grid">
+  <div class="about-column">
+    
+  </div>
+  <div class="work-column">
+    
+  </div>
+</section>
+
+
+<section class="section two-col">
+  <div id="about" class="col">
+    <header class="section-header">
+          <h2>about</h2>
+          <span class="section-sub">who i am & what i work on</span>
+        </header>
+
+        <div class="about-block">
+          <div class="terminal-nod"><span class="prompt">$</span><span>whoami</span></div>
+
+          <p>Hello, I'm Nick, a student in software development and electronics enthusiast. I enjoy programming and learning new things about electronics. I'm currently learning the Java programming language in school, so this is a blog to follow me on my journey and other projects.</p>
+          <p>This website is a place for me to share projects, blog posts, and notes about what I'm working on or learning. If you're into programming, gaming, or electronics, you might find something you like here.</p>
+
+          <div class="about-grid">
+            <div class="about-item"><span class="about-label">status</span><span class="about-value">Student</span></div>
+            <div class="about-item"><span class="about-label">focus</span><span class="about-value">Software Development</span></div>
+            <div class="about-item"><span class="about-label">currently_learning</span><span class="about-value">Java</span></div>
+          </div>
+
+          <div class="interests-grid" aria-label="Interests">
+      <div class="interest-card">
+        <div class="interest-title">Programming</div>
+        <ul class="interest-list">
+          <li>Java</li><li>Web Development</li><li>Software Engineering</li><li>Problem Solving</li>
+        </ul>
+      </div>
+      <div class="interest-card">
+        <div class="interest-title">Electronics</div>
+        <ul class="interest-list">
+          <li>Circuit Design</li><li>Hardware Tinkering</li><li>Soldering</li><li>Component Testing</li>
+        </ul>
+      </div>
+      <div class="interest-card">
+        <div class="interest-title">Gaming</div>
+        <ul class="interest-list">
+          <li>Retro Gaming</li><li>Console Restoration</li><li>Controller Modding</li><li>Gaming Hardware</li>
+        </ul>
+      </div>
+          </div>
+
+          <div class="working-list">
+            <h3>what i'm working on</h3>
+            <ul>
+<li>SNES restoration from 1993 - deep cleaning, rust removal, and capacitor replacement</li>
+<li>Homemade USB-C cables - documenting the process</li>
+<li>Paracord mods for Gamecube controllers</li>
+<li>Steel sticks for N64 controllers - prototypes in development</li>
+<li>Learning Java through school projects and personal exploration</li>
+            </ul>
+          </div>
+        </div>
+  </div>
+
+  <div id="blog" class="col blog-col">
+    <header class="section-header">
+          <h2>latest posts</h2>
+          <span class="section-sub">pulled from contentful</span>
+        </header>
+
+        <div class="post-list" id="homePostList">
+          <article class="post-card" id="homePostsLoading">
+            <p class="post-excerpt">Loading posts…</p>
+          </article>
+        </div>
+
+        <div style="margin-top: 12px;">
+          <a href="blog/" style="text-decoration: underline;">View all posts →</a>
+        </div>
+  </div>
+</section>
+
+<section id="work" class="section">
+        <header class="section-header">
+          <h2>selected work</h2>
+          <span class="section-sub">hardware mods · tools · experiments</span>
+        </header>
+
+        <div class="gallery">
+          <figure class="gallery-item gallery-placeholder">
+  <a href="https://nmneedham.github.io/Angular-JS-Project/map" target="_blank" rel="noreferrer">
+    <div class="placeholder-box"></div>
+    <figcaption class="gallery-caption">
+      <span class="gallery-title">Interactive World Map</span>
+      <span class="gallery-tag">Angular · Java</span>
+    </figcaption>
+  </a>
+</figure>
+
+          <figure class="gallery-item gallery-placeholder">
+            <div class="placeholder-box"></div>
+            <figcaption class="gallery-caption">
+              <span class="gallery-title">snes restoration</span>
+              <span class="gallery-tag">hardware</span>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item gallery-placeholder">
+            <div class="placeholder-box"></div>
+            <figcaption class="gallery-caption">
+              <span class="gallery-title">portfolio refresh</span>
+              <span class="gallery-tag">web</span>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+</main>
+  </div>
+
+  <script src="theme.js"></script>
+  <script type="module" src="js/home-posts.js"></script>
+</body>
+</html>

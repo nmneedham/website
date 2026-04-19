@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Loading... - nmneedham.dev</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<button id="darkModeToggle" title="Toggle Dark Mode">🌓</button>
+
+<header>
+  <h1>nmneedham.dev</h1>
+  <nav>
+    <a href="/index.html">home</a>
+    <a href="/about/">about</a>
+    <a href="/blog/">blog</a>
+    <a href="/projects/">projects</a>
+    <a href="https://github.com/nmneedham" target="_blank">github</a>
+    <a href="/contact/">contact</a>
+  </nav>
+</header>
+
+<main>
+  <section id="blog-post">
+    <div class="loading">Loading blog post...</div>
+  </section>
+</main>
+
+<script>
+// Your existing dark mode toggle
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.getElementById("darkModeToggle");
+  toggle.addEventListener("click", () => {
+    document.body.classList.toggle("light-mode");
+  });
+});
+
+// Contentful API configuration
+const SPACE_ID = 'fviougkbi52t';
+const ACCESS_TOKEN = '-s8slzxy4UvY1VOFDR9gZwEWm3xWsTjIl21TWM7-8oA'; // Replace with your actual Access Token
+
+async function fetchSinglePost() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const slug = urlParams.get('slug');
+  
+  if (!slug) {
+    document.getElementById('blog-post').innerHTML = 
+      '<div class="error">Post not found. <a href="index.html" class="back-link">← Back to Blog</a></div>';
+    return;
+  }
+  
+  try {
+    const response = await fetch(
+      `https://cdn.contentful.com/spaces/${SPACE_ID}/entries?content_type=blogPost&fields.slug=${slug}&access_token=${ACCESS_TOKEN}&include=2`
+    );
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    const data = await response.json();
+    
+    if (data.items.length === 0) {
+      document.getElementById('blog-post').innerHTML = 
+        '<div class="error">Post not found. <a href="index.html" class="back-link">← Back to Blog</a></div>';
+      return;
+    }
+    
+    displayPost(data.items[0], data.includes);
+  } catch (error) {
+    console.error('Error fetching post:', error);
+    document.getElementById('blog-post').innerHTML = 
+      '<div class="error">Error loading post. Please try again later. <a href="index.html" class="back-link">← Back to Blog</a></div>';
+  }
+}
+
+function displayPost(post, includes) {
+  const fields = post.fields;
+  
+  // Update page title
+  document.title = `${fields.title || 'Blog Post'} - nmneedham.dev`;
+  
+  // Format the date
+  let publishedDate = '';
+  if (fields.publishedDate) {
+    publishedDate = new Date(fields.publishedDate).toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+  }
+  
+  // Get featured image if it exists
+  let featuredImageHtml = '';
+  if (fields.featuredImage && includes?.Asset) {
+    const imageAsset = includes.Asset.find(asset => asset.sys.id === fields.featuredImage.sys.id);
+    if (imageAsset) {
+      featuredImageHtml = `<img src="${imageAsset.fields.file.url}" alt="${fields.title || 'Featured image'}" class="featured-image">`;
+    }
+  }
+  
+  // Convert rich text content to HTML
+  const contentHtml = convertRichTextToHtml(fields.content);
+  
+  // Calculate reading time
+  const readingTime = calculateReadingTime(fields.content);
+  
+  document.getElementById('blog-post').innerHTML = `
+    <h2>${fields.title || 'Untitled Post'}</h2>
+    <p class="post-meta"><em>By ${fields.author || 'Unknown Author'}${publishedDate ? ` • ${publishedDate}` : ''} • ${readingTime}</em></p>
+    
+    ${featuredImageHtml}
+    
+    <div class="post-content">
+      ${contentHtml}
+    </div>
+    
+    <p><a href="index.html" class="back-link">← Back to Blog</a></p>
+  `;
+}
+
+function calculateReadingTime(richTextDocument) {
+  if (!richTextDocument || !richTextDocument.content) {
+    return '1 min read';
+  }
+  
+  // Extract all text from the rich text document
+  let wordCount = 0;
+  
+  function countWordsInNode(node) {
+    if (node.nodeType === 'text' && node.value) {
+      wordCount += node.value.trim().split(/\s+/).filter(word => word.length > 0).length;
+    }
+    
+    if (node.content && Array.isArray(node.content)) {
+      node.content.forEach(countWordsInNode);
+    }
+  }
+  
+  richTextDocument.content.forEach(countWordsInNode);
+  
+  // Average reading speed is 200-250 words per minute
+  // Using 200 for a conservative estimate
+  const wordsPerMinute = 200;
+  const minutes = Math.ceil(wordCount / wordsPerMinute);
+  
+  return `${minutes} min read`;
+}
+
+function convertRichTextToHtml(richTextDocument) {
+  if (!richTextDocument || !richTextDocument.content) {
+    return '<p>No content available.</p>';
+  }
+  
+  return richTextDocument.content.map(node => {
+    switch (node.nodeType) {
+      case 'paragraph':
+        const paragraphText = node.content?.map(textNode => {
+          if (textNode.nodeType === 'text') {
+            let text = textNode.value;
+            // Handle text formatting
+            if (textNode.marks) {
+              textNode.marks.forEach(mark => {
+                switch (mark.type) {
+                  case 'bold':
+                    text = `<strong>${text}</strong>`;
+                    break;
+                  case 'italic':
+                    text = `<em>${text}</em>`;
+                    break;
+                  case 'underline':
+                    text = `<u>${text}</u>`;
+                    break;
+                  case 'code':
+                    text = `<code>${text}</code>`;
+                    break;
+                }
+              });
+            }
+            return text;
+          }
+          return textNode.value || '';
+        }).join('') || '';
+        return `<p>${paragraphText}</p>`;
+        
+      case 'heading-1':
+        const h1Text = node.content?.map(textNode => textNode.value).join('') || '';
+        return `<h2>${h1Text}</h2>`; // Using h2 since your template uses h2 for main headings
+        
+      case 'heading-2':
+        const h2Text = node.content?.map(textNode => textNode.value).join('') || '';
+        return `<h3>${h2Text}</h3>`;
+        
+      case 'heading-3':
+        const h3Text = node.content?.map(textNode => textNode.value).join('') || '';
+        return `<h4>${h3Text}</h4>`;
+        
+      case 'unordered-list':
+        const listItems = node.content?.map(listItem => {
+          const itemText = listItem.content?.[0]?.content?.map(textNode => textNode.value).join('') || '';
+          return `<li>${itemText}</li>`;
+        }).join('') || '';
+        return `<ul class="checklist">${listItems}</ul>`;
+        
+      case 'ordered-list':
+        const orderedItems = node.content?.map(listItem => {
+          const itemText = listItem.content?.[0]?.content?.map(textNode => textNode.value).join('') || '';
+          return `<li>${itemText}</li>`;
+        }).join('') || '';
+        return `<ol>${orderedItems}</ol>`;
+        
+      case 'blockquote':
+        const quoteText = node.content?.map(paragraph => 
+          paragraph.content?.map(textNode => textNode.value).join('')
+        ).join('') || '';
+        return `<blockquote>${quoteText}</blockquote>`;
+        
+      case 'hr':
+        return '<hr>';
+        
+      default:
+        // Handle unknown node types gracefully
+        if (node.content) {
+          const fallbackText = node.content.map(subNode => 
+            subNode.value || (subNode.content && subNode.content.map(textNode => textNode.value).join(''))
+          ).join('');
+          return `<p>${fallbackText}</p>`;
+        }
+        return '';
+    }
+  }).join('');
+}
+
+// Load post when page loads
+fetchSinglePost();
+</script>
+</body>
+</html>

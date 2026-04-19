@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Nick Needham — Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="alternate" type="application/rss+xml" title="Nick Needham RSS" href="../rss.xml" />
+</head>
+<body>
+  <div class="page">
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <a href="/" class="site-title">Nick Needham</a>
+        <nav class="sidebar-nav">
+          <a href="../#work">work</a>
+          <a href="./">blog</a>
+          <a href="../#about">about</a>
+          <a href="../rss.xml">rss feed</a>
+        </nav>
+        <!-- <p class="sidebar-desc">Hello, I'm Nick, a student in software development and electronics enthusiast. I enjoy programming and learning new things about electronics. I'm currently learning the Java programming language in school, so this is a blog to follow me on my journey and other projects.</p> -->
+      </div>
+
+      <div class="sidebar-bottom">
+        <button id="themeToggle" class="theme-toggle" type="button">dark mode</button>
+        <div class="social-links">
+          <a href="https://github.com/nmneedham" target="_blank" rel="noreferrer">github</a>
+          <a href="mailto:you@example.com">email</a>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <section class="section">
+        <header class="section-header">
+          <h2>all posts</h2>
+          <span class="section-sub">newest first</span>
+        </header>
+
+        <div class="post-list" id="blogIndexList">
+          <article class="post-card" id="blogIndexLoading">
+            <p class="post-excerpt">Loading posts…</p>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="../theme.js"></script>
+  <script type="module" src="../js/blog-index.js"></script>
+</body>
+</html>

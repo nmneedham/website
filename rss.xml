@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Nick Needham — Blog</title>
+    <link>https://nmneedham.dev/</link>
+    <description>Notes, build logs, and development work by Nick Needham.</description>
+    <language>en-us</language>
+
+    <item>
+      <title>Gameboy Advance SP Reshell</title>
+      <link>https://nmneedham.dev/blog/static/gbaspreshell.html</link>
+      <guid>https://nmneedham.dev/blog/static/gbaspreshell.html</guid>
+      <pubDate>Thu, 07 Aug 2025 00:00:00 GMT</pubDate>
+      <description>Little side project I did for my wife. I gave her my beat up GBA SP, and replaced it with a shell kit I found on good ol&apos; Aliexpress</description>
+    </item>
+
+    <item>
+      <title>My upcoming projects</title>
+      <link>https://nmneedham.dev/blog/static/upcomingprojects.html</link>
+      <guid>https://nmneedham.dev/blog/static/upcomingprojects.html</guid>
+      <pubDate>Sat, 12 Jul 2025 00:00:00 GMT</pubDate>
+      <description>Current projects I am working on</description>
+    </item>
+
+    <item>
+      <title>First project/blog post</title>
+      <link>https://nmneedham.dev/blog/static/snesresto.html</link>
+      <guid>https://nmneedham.dev/blog/static/snesresto.html</guid>
+      <pubDate>Tue, 01 Jul 2025 00:00:00 GMT</pubDate>
+      <description>Well, first blog post. Im currently working on restoring my 1993~ SNES or (Super Nintendo Entertainment System) for the non-gamers. but first, the funniest s…</description>
+    </item>
+  </channel>
+</rss>

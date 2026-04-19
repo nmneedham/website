@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>~/blog - Terminal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="terminal-container">
+        <div class="terminal-window">
+            <div class="terminal-header">
+                <div class="terminal-buttons">
+                    <span class="terminal-button"></span>
+                    <span class="terminal-button"></span>
+                    <span class="terminal-button"></span>
+                </div>
+                <div class="terminal-title">nick@nmneedham:~/blog</div>
+            </div>
+
+            <div class="terminal-body">
+                <!-- Navigation -->
+                <nav class="nav">
+                    <div class="nav-prompt">
+                        <span class="prompt-symbol">$</span>
+                        <span class="prompt-path">~/nmneedham.dev/blog</span>
+                        <span class="prompt-cursor"></span>
+                    </div>
+                    <ul class="nav-links">
+                        <li><a href="index.html">home</a></li>
+                        <li><a href="projects.html">projects</a></li>
+                        <li><a href="blog-list.html">blog</a></li>
+                        <li><a href="about.html">about</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Page Header -->
+                <div class="page-header">
+                    <h1>Blog Posts</h1>
+                    <p class="page-description">Programming, gaming, electronics, and whatever else I'm working on</p>
+                </div>
+
+                <!-- Filter Bar -->
+                <div class="filter-bar">
+                    <div class="filter-label">FILTER_BY=</div>
+                    <div class="filter-tags">
+                        <button class="filter-tag active">all</button>
+                        <button class="filter-tag">gaming</button>
+                        <button class="filter-tag">projects</button>
+                        <button class="filter-tag">programming</button>
+                        <button class="filter-tag">electronics</button>
+                    </div>
+                </div>
+
+                <!-- Blog Posts -->
+                <div class="posts-list">
+                    <article class="post-item">
+                        <div class="post-meta">
+                            <span class="post-category">Personal</span>
+                            <span class="post-date">2025-10-31</span>
+                        </div>
+                        <a href="https://nmneedham.dev/blog/blog-post.html?slug=nostalgiac-things-and-other-thoughts" class="post-title">Nostalgiac Things and Other Thoughts</a>
+                        <p class="post-excerpt">New updates. Finished my classes I have been dragging ass on. Now I have to wait until Nov 1st to start my next set of classes. Finally have some free time to do my projects. I haven't had the urge to do the GameCube cords yet, but that will come after I finish the next modded GameCube a friend let me mod. Missing those days of playing games on shitty computers with screen tearing and outdated drivers. Things were much simpler back then.</p>
+                        <a href="https://nmneedham.dev/blog/blog-post.html?slug=nostalgiac-things-and-other-thoughts" class="read-more">read full post</a>
+                    </article>
+
+                    <article class="post-item">
+                        <div class="post-meta">
+                            <span class="post-category">Personal</span>
+                            <span class="post-date">2025-08-30</span>
+                        </div>
+                        <a href="https://nmneedham.dev/blog/blog-post.html?slug=some-life-updates" class="post-title">Some Life Updates</a>
+                        <p class="post-excerpt">Lately I haven't been able to finish projects nor have I had time to really take for myself. I have started a new job at Eli Lilly. I have really tried to get back into a schedule or routine for the past couple weeks so I can balance my life. It feels good to be part of a start-up and I joined the company at a real good time, but lately I've felt like I've kind of lost some identity. I have kind of pushed my hobbies to the side in place of my new job. Finished the SNES, received N64 steel sticks, working on GameCube builds and paracord cords. Excited for upcoming concerts - System of a Down, Kali Uchis, and Turnstile.</p>
+                        <a href="https://nmneedham.dev/blog/blog-post.html?slug=some-life-updates" class="read-more">read full post</a>
+                    </article>
+
+                    <article class="post-item">
+                        <div class="post-meta">
+                            <span class="post-category">Programming</span>
+                            <span class="post-date">2025-08-15</span>
+                        </div>
+                        <a href="https://nmneedham.dev/blog/blog-post.html?slug=contentful-blog-test" class="post-title">Contentful Blog Test</a>
+                        <p class="post-excerpt">This is just a test for the new blog service I'm using. Through using API calls and JavaScript instead of killing myself using an IDE to make HTML posts every time I have something to post. This is a way easier thing to use and I'm very happy with the result.</p>
+                        <a href="https://nmneedham.dev/blog/blog-post.html?slug=contentful-blog-test" class="read-more">read full post</a>
+                    </article>
+
+                    <article class="post-item">
+                        <div class="post-meta">
+                            <span class="post-category">Gaming</span>
+                            <span class="post-date">2025-08-07</span>
+                        </div>
+                        <a href="https://nmneedham.dev/blog/gbaspreshell.html" class="post-title">Gameboy Advance SP Reshell</a>
+                        <p class="post-excerpt">Little side project I did for my wife. I gave her my beat up GBA SP, and replaced it with a shell kit I found on good ol' Aliexpress. Easy change and pretty clean motherboard. It was a fun project, I didn't take pictures of the hinges I took out. That was the hardest part. It's not the best shell replacement but nothing beats a clean shell without teeth marks (I would get mad at Pokemon when I was younger...Don't ask)</p>
+                        <a href="https://nmneedham.dev/blog/gbaspreshell.html" class="read-more">read full post</a>
+                    </article>
+
+                    <article class="post-item">
+                        <div class="post-meta">
+                            <span class="post-category">Projects</span>
+                            <span class="post-date">2025-07-12</span>
+                        </div>
+                        <a href="https://nmneedham.dev/blog/upcomingprojects.html" class="post-title">My Upcoming Projects</a>
+                        <p class="post-excerpt">Current projects I am working on: Homemade USB-C cords (Currently documenting process), Paracord for Gamecube controller (Just received all the parts and will be working on that in the next couple days), Steel Sticks for the N64 (Passion project and prototypes being produced soon™). These are the current projects I am currently working on. I am currently looking for work to fund most of these projects. I will make more paracord controller cords for sale in my shop when I get around to it.</p>
+                        <a href="https://nmneedham.dev/blog/upcomingprojects.html" class="read-more">read full post</a>
+                    </article>
+
+                    <article class="post-item">
+                        <div class="post-meta">
+                            <span class="post-category">Gaming</span>
+                            <span class="post-date">2025-07-01</span>
+                        </div>
+                        <a href="https://nmneedham.dev/blog/snesresto.html" class="post-title">SNES Restoration - First Project</a>
+                        <p class="post-excerpt">Well, first blog post. I'm currently working on restoring my 1993~ SNES or (Super Nintendo Entertainment System) for the non-gamers. But first, the funniest story of how I found it. It was a couple weeks into June and my Wife's younger brother was having a graduation party from High School, and this party was near my old house in northern Illinois. My dad was cleaning up some things from the old house, and I had asked him if he could retrieve my brothers XBOX 360 from the house because I've been on a retro-ish kick. He called me when my wife and I arrived at the party to come pick up the "Xbox" and he left it outside, and also told me it was in bad shape.</p>
+                        <a href="https://nmneedham.dev/blog/snesresto.html" class="read-more">read full post</a>
+                    </article>
+                </div>
+
+                <!-- Footer -->
+                <footer class="terminal-footer">
+                    <p>© 2025 Nick Needham | nmneedham.dev | [ ls -la /blog ]</p>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple filter functionality
+        const filterTags = document.querySelectorAll('.filter-tag');
+        const posts = document.querySelectorAll('.post-item');
+
+        filterTags.forEach(tag => {
+            tag.addEventListener('click', () => {
+                // Remove active class from all tags
+                filterTags.forEach(t => t.classList.remove('active'));
+                // Add active class to clicked tag
+                tag.classList.add('active');
+
+                const filter = tag.textContent.toLowerCase();
+
+                posts.forEach(post => {
+                    if (filter === 'all') {
+                        post.style.display = 'block';
+                    } else {
+                        const category = post.querySelector('.post-category').textContent.toLowerCase();
+                        post.style.display = category.includes(filter) ? 'block' : 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
