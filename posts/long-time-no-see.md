@@ -1,6 +1,6 @@
 ---
 title: "Long time no see/talk"
-date: "2026-06-25
+date: "2026-06-25"
 excerpt: "An update post of sorts"
 slug: "long-time-no-see"
 tags:
