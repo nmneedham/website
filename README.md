@@ -1,4 +1,4 @@
-# Nick Needham Site (Markdown + Generated Posts)
+# Personwl portfolio & Site (Markdown + Generated Posts)
 
 This version switches the blog away from Contentful/manual post manifests.
 
