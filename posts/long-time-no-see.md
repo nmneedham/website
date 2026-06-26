@@ -5,7 +5,6 @@ excerpt: "An update post of sorts"
 slug: "long-time-no-see"
 tags:
   - update
-  - 
 ---
 
 Howdy, everyone. Long time no talk. I have been extremely busy since the last post. I am currently on my "last" term of school and hope to finish by the end of the year. I have started a micro-internship at school that will hopefully help me land a job in the tech/IT field whenever Im ready for that. 
