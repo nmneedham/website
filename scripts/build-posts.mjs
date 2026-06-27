@@ -65,10 +65,10 @@ function buildPostHtml(post) {
       <div class="sidebar-top">
         <a href="../../index.html" class="site-title">Nick Needham</a>
         <nav class="sidebar-nav">
-          <a href="../../index.html#work">work</a>
-          <a href="../../blog.html">blog</a>
-          <a href="../../index.html#about">about</a>
-          <a href="../../rss.xml">rss feed</a>
+          <a href="/index.html#work">work</a>
+          <a href="/blog.html">blog</a>
+          <a href="/index.html#about">about</a>
+          <a href="/rss.xml">rss feed</a>
         </nav>
         <p class="sidebar-desc">${escapeHtml(SITE.blurb)}</p>
       </div>
