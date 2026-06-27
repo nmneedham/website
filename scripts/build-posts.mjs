@@ -66,7 +66,7 @@ function buildPostHtml(post) {
         <a href="../../index.html" class="site-title">Nick Needham</a>
         <nav class="sidebar-nav">
           <a href="../../index.html#work">work</a>
-          <a href="../index.html">blog</a>
+          <a href="../../blog.html">blog</a>
           <a href="../../index.html#about">about</a>
           <a href="../../rss.xml">rss feed</a>
         </nav>
@@ -96,7 +96,7 @@ function buildPostHtml(post) {
           </div>
 
           <footer class="post-footer">
-            <a href="../index.html">← Back to all posts</a>
+            <a href="../../blog.html">← Back to all posts</a>
           </footer>
         </article>
       </div>
