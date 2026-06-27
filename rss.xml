@@ -7,11 +7,27 @@
     <language>en-us</language>
 
     <item>
+      <title>Long time no see/talk</title>
+      <link>https://nmneedham.dev/blog/posts/long-time-no-see.html</link>
+      <guid>https://nmneedham.dev/blog/posts/long-time-no-see.html</guid>
+      <pubDate>Thu, 25 Jun 2026 00:00:00 GMT</pubDate>
+      <description>An update post of sorts</description>
+    </item>
+
+    <item>
       <title>Example new post</title>
       <link>https://nmneedham.dev/blog/posts/example-new-post.html</link>
       <guid>https://nmneedham.dev/blog/posts/example-new-post.html</guid>
       <pubDate>Sun, 19 Apr 2026 00:00:00 GMT</pubDate>
       <description>This is a sample Markdown post showing how future posts can be added without touching any JavaScript manifests.</description>
+    </item>
+
+    <item>
+      <title>switching to markdown for blog!</title>
+      <link>https://nmneedham.dev/blog/posts/markdown-blog-change.html</link>
+      <guid>https://nmneedham.dev/blog/posts/markdown-blog-change.html</guid>
+      <pubDate>Sun, 19 Apr 2026 00:00:00 GMT</pubDate>
+      <description>switching blog over to github repo</description>
     </item>
 
     <item>

@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>Contentful Blog Test — Nick Needham</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css" />
   <link rel="alternate" type="application/rss+xml" title="Nick Needham RSS" href="/rss.xml" />
 </head>
 <body>
   <div class="page">
+    
     <aside class="sidebar">
       <div class="sidebar-top">
         <a href="/" class="site-title">Nick Needham</a>
 
-        <nav class="sidebar-nav">
+        <nav class="sidebar-nav" aria-label="Primary navigation">
           <a href="/#work">work</a>
-          <a href="/blog.html">blog</a>
+          <a href="/blog/">blog</a>
           <a href="/#about">about</a>
           <a href="/rss.xml">rss feed</a>
         </nav>
@@ -30,7 +30,8 @@
         <button id="themeToggle" class="theme-toggle" type="button">dark mode</button>
         <div class="social-links">
           <a href="https://github.com/nmneedham" target="_blank" rel="noreferrer">github</a>
-          <a href="mailto:you@example.com">email</a>
+          <a href="/blog/">blog</a>
+          <a href="mailto:you@n.needham@live.com">email</a>
         </div>
       </div>
     </aside>
@@ -55,7 +56,7 @@
           </div>
 
           <footer class="post-footer">
-            <a href="/blog.html">← Back to all posts</a>
+            <a href="/blog/">← Back to blog</a>
           </footer>
         </article>
       </div>

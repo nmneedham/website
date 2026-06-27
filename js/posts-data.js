@@ -1,5 +1,17 @@
 export const POSTS = [
   {
+    "slug": "long-time-no-see",
+    "title": "Long time no see/talk",
+    "date": "2026-06-25",
+    "excerpt": "An update post of sorts",
+    "tags": [
+      "update",
+      "blog post"
+    ],
+    "read": "2 min read",
+    "href": "/blog/posts/long-time-no-see.html"
+  },
+  {
     "slug": "example-new-post",
     "title": "Example new post",
     "date": "2026-04-19",
@@ -10,6 +22,18 @@ export const POSTS = [
     ],
     "read": "1 min read",
     "href": "/blog/posts/example-new-post.html"
+  },
+  {
+    "slug": "markdown-blog-change",
+    "title": "switching to markdown for blog!",
+    "date": "2026-04-19",
+    "excerpt": "switching blog over to github repo",
+    "tags": [
+      "programming",
+      "web"
+    ],
+    "read": "1 min read",
+    "href": "/blog/posts/markdown-blog-change.html"
   },
   {
     "slug": "test-generated",
